@@ -17,7 +17,7 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
 
     a) Utilize AWS Certification Manager for the TLS
 
-    b) Utilize Cloudfront to attach the TLS certificate to, and point to the S3 bucket aka the website 
+    b) Utilize Cloudfront and attach the newly created TLS certificate
 
 
 ## Issues that needed to be resolved:
