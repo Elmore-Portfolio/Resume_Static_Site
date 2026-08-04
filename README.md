@@ -1,9 +1,9 @@
 
-# AWS Hosted Resume @ melmore.dev
+# AWS Hosted Resume/Portfolio @ melmore.dev
 
 This is a deployment of my personal resume/portfolio utilizing AWS and the services provided.
 
-The steps to achieve this are as follows:
+## The steps to achieve this are as follows:
 
 1) Build the static website utilizing AWS S3
 
@@ -17,7 +17,7 @@ The steps to achieve this are as follows:
 
 
 
-Issues that needed to be resolved:
+## Issues that needed to be resolved:
 
 1) S3 bucket was created with static website files, and "Block all public access" was unchecked, but I could not access the website still from the S3 bucket link.
 
