@@ -19,4 +19,5 @@ The steps to achieve this are as follows:
 Issues that needed to be resolved:
 
 1) Website domain was obtained @ melmore.dev , but could not access website URL.
+
    Solution: Had to link S3 bucket to the domain name via a new record created in the public hosted zones within Route 53
