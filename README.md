@@ -7,9 +7,9 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
 
 1) Build the static website utilizing AWS S3
 
-    a) Creating a HTML/CSS/Javascript codes uploaded through Github into the S3 Bucket
+    a) Upload HTML/CSS/Javascript codes for the website into the S3 Bucket
     
-    b) Configure the S3 bucket as a static website  with public access
+    b) Configure the S3 bucket as a static website with public access
 
 2) Create a domain name utilizing Route 53 to use for the website
 
