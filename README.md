@@ -13,8 +13,11 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
 
 2) Create a domain name utilizing Route 53 to use for the website
 
-3) Deploy the static website utilizing CloudFront and setup SSL/HTTPS
+3) Deploy the static website utilizing CloudFront and setup SSL/HTTPS certificates
 
+    a) Utilize AWS Certification Manager for the TLS
+
+    b) Utilize Cloudfront to attach the TLS certificate to, and point to the S3 bucket aka the website 
 
 
 ## Issues that needed to be resolved:
@@ -27,6 +30,21 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
 
    Solution: I had to link the S3 bucket where the static website was hosted to the domain via a new record that I created withing Route 53 public hosted zones.
 
-3) Attempting to request a certificate from my S3 Buckets region (US-East-2 OHIO) for Cloudfront did not work.
+3) Attempting to request a certificate from my S3 Buckets region (US-East-2 OHIO) for Cloudfront did not show up.
 
-   Solution: I had to switch to US-East-1 N. Virginia
+   Solution: I had to switch to US-East-1 N. Virginia for AWS Certificate Manager, which is apparently a **must** for Cloudfront distributions because of its central architecture and edge-replication design.
+
+4) After implementing CloudFront and the certificate, the CloudFront distribution domain name link worked, but the domain name melmore.dev still did not work.
+
+   Solution: I had to update the A record in Route 53 to point towards CloudFront, as opposed to the initial setup of pointing towards the S3 Bucket.
+
+
+
+
+
+
+
+
+
+
+
