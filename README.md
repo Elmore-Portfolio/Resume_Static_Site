@@ -20,4 +20,4 @@ Issues that needed to be resolved:
 
 1) Website domain was obtained @ melmore.dev , but could not access website URL.
 
-   Solution: Had to link S3 bucket to the domain name via a new record created in the public hosted zones within Route 53
+   Solution: I had to link the S3 bucket where the static website was hosted to the domain via a new record that I created withing Route 53 public hosted zones.
