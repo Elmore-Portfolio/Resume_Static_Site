@@ -26,3 +26,7 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
 2) Website domain was obtained @ melmore.dev from Route 53, but could not access website URL.
 
    Solution: I had to link the S3 bucket where the static website was hosted to the domain via a new record that I created withing Route 53 public hosted zones.
+
+3) Attempting to request a certificate from my S3 Buckets region (US-East-2 OHIO) for Cloudfront did not work.
+
+   Solution: I had to switch to US-East-1 N. Virginia
