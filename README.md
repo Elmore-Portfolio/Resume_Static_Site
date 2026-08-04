@@ -24,22 +24,30 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
 
 1) S3 bucket was created with static website files, and "Block all public access" was unchecked, but I could not access the website still from the S3 bucket link.
 
-    Solution: In the S3 bucket permissions, I had to add a bucket policy that allowed all entities to access the static website bucket via JSON code.
+   Solution:
+   In the S3 bucket permissions, I had to add a bucket policy that allowed all entities to access the static website bucket via JSON code.
    
-2) Website domain was obtained @ melmore.dev from Route 53, but could not access website URL.
+3) Website domain was obtained @ melmore.dev from Route 53, but could not access website URL.
 
-   Solution: I had to link the S3 bucket where the static website was hosted to the domain via a new record that I created withing Route 53 public hosted zones.
+   Solution:
+   I had to link the S3 bucket where the static website was hosted to the domain via a new record that I created withing Route 53 public hosted zones.
 
-3) Attempting to request a certificate from my S3 Buckets region (US-East-2 OHIO) for Cloudfront did not show up.
+4) Attempting to request a certificate from my S3 Buckets region (US-East-2 OHIO) for Cloudfront did not show up.
 
-   Solution: I had to switch to US-East-1 N. Virginia for AWS Certificate Manager, which is apparently a **must** for Cloudfront distributions because of its central architecture and edge-replication design.
+   Solution:
+   I had to switch to US-East-1 N. Virginia for AWS Certificate Manager, which is apparently a **must** for Cloudfront distributions because of its central architecture and edge-replication design.
 
-4) After implementing CloudFront and the certificate, the CloudFront distribution domain name link worked, but the domain name melmore.dev still did not work.
+5) After implementing CloudFront and the certificate, the CloudFront distribution domain name link worked, but the domain name melmore.dev still did not work.
 
-   Solution: I had to update the A record in Route 53 to point towards CloudFront, as opposed to the initial setup of pointing towards the S3 Bucket.
+   Solution:
+   I had to update the A record in Route 53 to point towards CloudFront, as opposed to the initial setup of pointing towards the S3 Bucket.
 
+7) After website was deployed, updating the index.html file in the S3 bucket would not make any live changes to the website.
 
-
+   Solution:
+   It appears CloudFront was serving up cached information...
+   In the CloudFront distribution, I added an Invalidation "/*" which forces the reloading of ***all*** files.
+   As the website grows this will likely have to change to just the specific static website files (/index.html, /styles.css, /script.js)           
 
 
 
