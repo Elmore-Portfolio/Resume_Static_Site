@@ -47,7 +47,7 @@ This is a deployment of my personal resume/portfolio utilizing AWS and the servi
    Solution:
    It appears CloudFront was serving up cached information...
    In the CloudFront distribution, I added an Invalidation "/*" which forces the reloading of ***all*** files.
-   As the website grows this will likely have to change to just the specific static website files (/index.html, /styles.css, /script.js)           
+   As the website grows this will likely have to change to just the specific files (/index.html, /styles.css, /script.js)           
 
 
 
